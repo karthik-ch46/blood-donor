@@ -1,0 +1,99 @@
+/* =====================================================
+   PROFILE PAGE DESIGN
+   ===================================================== */
+
+.profile-page {
+    background: #f5f7fb;
+}
+
+/* Profile container */
+.profile-page .profile-container {
+    max-width: 900px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+/* Profile card */
+.profile-page .profile-card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* Profile header */
+.profile-page .profile-header {
+    background: linear-gradient(135deg, #8e0000, #d32f2f);
+    color: white;
+    text-align: center;
+    padding: 45px 25px;
+}
+
+/* Profile icon */
+.profile-page .profile-header::before {
+    content: "👤";
+    display: flex;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
+    background: white;
+    color: #c62828;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+}
+
+/* Profile heading */
+.profile-page .profile-header h1 {
+    margin: 5px 0;
+}
+
+/* Profile body */
+.profile-page .profile-body {
+    padding: 35px;
+}
+
+/* Information item */
+.profile-page .profile-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 17px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.profile-page .profile-item:last-child {
+    border-bottom: none;
+}
+
+.profile-page .profile-item strong {
+    color: #555555;
+}
+
+.profile-page .profile-item span {
+    color: #222222;
+    font-weight: 600;
+}
+
+/* Blood badge */
+.profile-page .blood-badge {
+    background: #c62828;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .profile-page .profile-body {
+        padding: 22px;
+    }
+
+    .profile-page .profile-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

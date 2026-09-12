@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🩸 Blood Donor
+    </div>
+
+    <div class="nav-links">
+
+        <a href="{{ url_for('home') }}">Home</a>
+
+        <a href="{{ url_for('profile') }}">Profile</a>
+
+        <a href="{{ url_for('register') }}">Register</a>
+
+        <a href="{{ url_for('search') }}">Search</a>
+
+        <a href="{{ url_for('logout') }}">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <div class="page-header">
+
+        <h1>
+            My Donor Profile
+        </h1>
+
+        <p>
+            Your registered blood donor information
+        </p>
+
+    </div>
+
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% for category, message in messages %}
+
+            <div class="alert {{ category }}">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endwith %}
+
+
+    <div class="profile-card">
+
+        <div class="profile-top">
+
+            <div class="avatar">
+                {{ donor["name"][0].upper() }}
+            </div>
+
+            <div>
+
+                <h2>
+                    {{ donor["name"] }}
+                </h2>
+
+                <span class="blood-badge">
+                    {{ donor["blood_group"] }}
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-grid">
+
+            <div class="detail">
+
+                <strong>Age</strong>
+
+                <span>
+                    {{ donor["age"] }}
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>Gender</strong>
+
+                <span>
+                    {{ donor["gender"] or "Not provided" }}
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>Mobile</strong>
+
+                <span>
+                    {{ donor["mobile"] }}
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>Contact</strong>
+
+                <span>
+                    {{ donor["contact"] }}
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>Email</strong>
+
+                <span>
+                    {{ donor["email"] or "Not provided" }}
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>Availability</strong>
+
+                <span class="available">
+                    {{ donor["available"] }}
+                </span>
+
+            </div>
+
+
+            <div class="detail full">
+
+                <strong>Address</strong>
+
+                <span>
+                    {{ donor["address"] }}
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>City</strong>
+
+                <span>
+                    {{ donor["city"] }}
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>State</strong>
+
+                <span>
+                    {{ donor["state"] }}
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>Pincode</strong>
+
+                <span>
+                    {{ donor["pincode"] or "Not provided" }}
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <strong>Last Donation</strong>
+
+                <span>
+                    {{ donor["last_donation"] or "Not provided" }}
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-actions">
+
+            <a href="{{ url_for('register') }}"
+               class="primary-btn">
+
+                Edit Profile
+
+            </a>
+
+            {% if donor["latitude"] and donor["longitude"] %}
+
+            <a
+                href="https://www.openstreetmap.org/?mlat={{ donor['latitude'] }}&mlon={{ donor['longitude'] }}#map=16/{{ donor['latitude'] }}/{{ donor['longitude'] }}"
+                target="_blank"
+                class="secondary-btn">
+
+                📍 View Location
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

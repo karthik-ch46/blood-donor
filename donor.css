@@ -1,0 +1,117 @@
+/* =====================================================
+   DONOR DIRECTORY PAGE DESIGN
+   ===================================================== */
+
+.donors-page {
+    background: #f5f7fb;
+}
+
+/* Main container */
+.donors-page .donors-container {
+    max-width: 1150px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.donors-page .page-header {
+    background: linear-gradient(135deg, #8e0000, #d32f2f);
+    color: white;
+    padding: 40px;
+    border-radius: 22px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(183, 28, 28, 0.18);
+}
+
+.donors-page .page-header h1 {
+    margin-top: 0;
+}
+
+.donors-page .page-header p {
+    opacity: 0.9;
+}
+
+/* Donor grid */
+.donors-page .donor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* Donor card */
+.donors-page .donor-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.25s;
+}
+
+/* Hover */
+.donors-page .donor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+/* Donor name */
+.donors-page .donor-card h3 {
+    color: #b71c1c;
+    margin-top: 0;
+}
+
+/* Blood badge */
+.donors-page .blood-badge {
+    display: inline-block;
+    background: #c62828;
+    color: white;
+    padding: 7px 13px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+/* Information */
+.donors-page .donor-card p {
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* Buttons */
+.donors-page .call-button,
+.donors-page .map-button {
+    display: inline-block;
+    padding: 9px 13px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.donors-page .call-button {
+    background: #2e7d32;
+    color: white;
+}
+
+.donors-page .map-button {
+    background: #1565c0;
+    color: white;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+
+    .donors-page .donor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .donors-page .donor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donors-page .page-header {
+        padding: 30px 22px;
+    }
+}

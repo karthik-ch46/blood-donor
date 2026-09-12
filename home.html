@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Donor - Home</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" 
+      href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="stylesheet" 
+      href="{{ url_for('static', filename='css/home.css') }}">      
+
+</head>
+
+<body class="home-page"></body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🩸 Blood Donor
+    </div>
+
+    <div class="nav-links">
+
+        <a href="{{ url_for('home') }}">Home</a>
+
+        <a href="{{ url_for('profile') }}">Profile</a>
+
+        <a href="{{ url_for('register') }}">Register</a>
+
+        <a href="{{ url_for('search') }}">Search</a>
+
+        <a href="{{ url_for('donors') }}">Donors</a>
+
+        <a href="{{ url_for('logout') }}"
+           class="logout">
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <section class="hero">
+
+        <div>
+
+            <h1>
+                Find a Blood Donor
+            </h1>
+
+            <p>
+                Search for blood donors based on blood group
+                and location.
+            </p>
+
+            <a href="{{ url_for('search') }}"
+               class="primary-btn">
+                Search Donors
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+            🩸
+        </div>
+
+    </section>
+
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <h2>
+                {{ donor_count }}
+            </h2>
+
+            <p>
+                Registered Donors
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>
+                8
+            </h2>
+
+            <p>
+                Blood Groups
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>
+                24/7
+            </h2>
+
+            <p>
+                Search Access
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="quick-actions">
+
+        <h2>
+            Quick Actions
+        </h2>
+
+        <div class="action-grid">
+
+            <a href="{{ url_for('register') }}"
+               class="action-card">
+
+                <span>➕</span>
+
+                <h3>
+                    Register as Donor
+                </h3>
+
+                <p>
+                    Add your donor details.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('search') }}"
+               class="action-card">
+
+                <span>🔍</span>
+
+                <h3>
+                    Search Blood
+                </h3>
+
+                <p>
+                    Find matching donors.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('profile') }}"
+               class="action-card">
+
+                <span>👤</span>
+
+                <h3>
+                    My Profile
+                </h3>
+
+                <p>
+                    View your donor profile.
+                </p>
+
+            </a>
+
+
+            <a href="{{ url_for('donors') }}"
+               class="action-card">
+
+                <span>🩸</span>
+
+                <h3>
+                    Donor List
+                </h3>
+
+                <p>
+                    View registered donors.
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+<body class="home-page"></body>
+</html>

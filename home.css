@@ -1,0 +1,126 @@
+/* =====================================================
+   HOME PAGE DESIGN
+   ===================================================== */
+
+.home-page {
+    background: #f7f9fc;
+}
+
+/* Hero */
+.home-page .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #8e0000, #d32f2f, #ef5350);
+    color: white;
+    padding: 70px 55px;
+    border-radius: 28px;
+    margin-bottom: 30px;
+    box-shadow: 0 20px 45px rgba(183, 28, 28, 0.20);
+}
+
+.home-page .hero h1 {
+    max-width: 700px;
+    font-size: 44px;
+    line-height: 1.15;
+    margin: 0 0 18px;
+}
+
+.home-page .hero p {
+    max-width: 650px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Hero buttons */
+.home-page .hero a,
+.home-page .hero button {
+    display: inline-block;
+    padding: 13px 22px;
+    margin-top: 15px;
+    margin-right: 8px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+    background: #ffffff;
+    color: #b71c1c;
+}
+
+/* Stats */
+.home-page .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.home-page .stat-card {
+    background: white;
+    padding: 28px 20px;
+    border-radius: 18px;
+    border: 1px solid #eeeeee;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.home-page .stat-card h2 {
+    color: #c62828;
+    font-size: 34px;
+    margin: 0 0 5px;
+}
+
+.home-page .stat-card p {
+    color: #777777;
+}
+
+/* Quick actions */
+.home-page .quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.home-page .quick-action {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: #222222;
+    border: 1px solid #eeeeee;
+    transition: 0.25s;
+}
+
+.home-page .quick-action:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+.home-page .quick-action h3 {
+    color: #c62828;
+    margin-top: 0;
+}
+
+.home-page .quick-action p {
+    color: #777777;
+    line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .home-page .hero {
+        padding: 45px 25px;
+        border-radius: 20px;
+    }
+
+    .home-page .hero h1 {
+        font-size: 32px;
+    }
+
+    .home-page .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .quick-actions {
+        grid-template-columns: 1fr;
+    }
+}

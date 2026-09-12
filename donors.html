@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Donor List</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🩸 Blood Donor
+    </div>
+
+    <div class="nav-links">
+
+        <a href="{{ url_for('home') }}">Home</a>
+
+        <a href="{{ url_for('profile') }}">Profile</a>
+
+        <a href="{{ url_for('register') }}">Register</a>
+
+        <a href="{{ url_for('search') }}">Search</a>
+
+        <a href="{{ url_for('logout') }}">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <div class="page-header">
+
+        <h1>
+            Registered Donors
+        </h1>
+
+        <p>
+            Blood donor database
+        </p>
+
+    </div>
+
+
+    {% if donors %}
+
+    <div class="donor-grid">
+
+        {% for donor in donors %}
+
+        <div class="donor-card">
+
+            <div class="donor-card-top">
+
+                <div class="small-avatar">
+                    {{ donor["name"][0].upper() }}
+                </div>
+
+                <div>
+
+                    <h3>
+                        {{ donor["name"] }}
+                    </h3>
+
+                    <span class="blood-badge">
+                        {{ donor["blood_group"] }}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="donor-info">
+
+                <p>
+                    <strong>Age:</strong>
+                    {{ donor["age"] }}
+                </p>
+
+                <p>
+                    <strong>Gender:</strong>
+                    {{ donor["gender"] }}
+                </p>
+
+                <p>
+                    <strong>Contact:</strong>
+                    {{ donor["contact"] }}
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    {{ donor["city"] }},
+                    {{ donor["state"] }}
+                </p>
+
+                <p>
+                    <strong>Availability:</strong>
+
+                    <span class="available">
+                        {{ donor["available"] }}
+                    </span>
+
+                </p>
+
+            </div>
+
+
+            <div class="donor-actions">
+
+                <a
+                    href="tel:{{ donor['contact'] }}"
+                    class="call-btn">
+
+                    📞 Call
+
+                </a>
+
+
+                {% if donor["latitude"] and donor["longitude"] %}
+
+                <a
+                    href="https://www.openstreetmap.org/?mlat={{ donor['latitude'] }}&mlon={{ donor['longitude'] }}#map=16/{{ donor['latitude'] }}/{{ donor['longitude'] }}"
+                    target="_blank"
+                    class="map-btn">
+
+                    📍 Map
+
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="no-results">
+
+        <div>
+            🩸
+        </div>
+
+        <h2>
+            No donors registered yet
+        </h2>
+
+        <p>
+            Register the first donor.
+        </p>
+
+        <a href="{{ url_for('register') }}"
+           class="primary-btn">
+
+            Register Donor
+
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

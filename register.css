@@ -1,0 +1,92 @@
+/* =====================================================
+   DONOR REGISTRATION PAGE DESIGN
+   ===================================================== */
+
+.register-page {
+    background: #f6f8fb;
+}
+
+/* Main form */
+.register-page .form-container,
+.register-page .form-card {
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 38px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+}
+
+/* Page title */
+.register-page h1 {
+    color: #b71c1c;
+}
+
+/* Form labels */
+.register-page label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Inputs */
+.register-page input,
+.register-page select,
+.register-page textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dddddd;
+    border-radius: 9px;
+    background: white;
+    font-size: 15px;
+    outline: none;
+}
+
+/* Focus */
+.register-page input:focus,
+.register-page select:focus,
+.register-page textarea:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.08);
+}
+
+/* Form group */
+.register-page .form-group {
+    margin-bottom: 20px;
+}
+
+/* Submit buttons */
+.register-page button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #b71c1c, #e53935);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Location button */
+.register-page button {
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+/* Hover */
+.register-page button:hover {
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+
+    .register-page .form-container,
+    .register-page .form-card {
+        width: 94%;
+        padding: 23px;
+        border-radius: 17px;
+    }
+}
